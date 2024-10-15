@@ -5,6 +5,12 @@
 #include "driver/gpio.h"
 #include "esp_timer.h"
 
+// Definições
+#define LOW 0
+#define HIGH 1
+#define TRIG_PIN 22
+#define ECHO_PIN 23
+
 // Variaveis globais
 volatile int tempoTriggerMili = 10;
 volatile float distanciaChao = -1;
@@ -14,7 +20,7 @@ volatile int escolha = -1;
 
 void Calibrar();
 void MostrarAltura();
-float CalcularDistancia();
+void CalcularDistancia();
 
 void Menu()
 {
@@ -51,7 +57,7 @@ void Menu()
 
 void Calibrar()
 {
-    distanciaChao = CalcularDistancia();
+    distanciaChao = distanciaAtual;
     printf("\n A altura do chão é %.2f metros. \n\n", distanciaChao);
 }
 
@@ -64,36 +70,49 @@ void MostrarAltura()
     vTaskDelay(50);
 }
 
-float CalcularDistancia()
+void CalcularDistancia()
 {
     // Calcula a distancia do sensor HC04
-    return -1;
-}
-
-// Função que fica verificando continuamente a distância
-void VerificaDistancia(void *pvParameters)
-{
-    while(1)
+    int64_t t1 = 0, t2 = 0, pulse_time = 0;
+    while(1) 
     {
-        distanciaAtual = CalcularDistancia();
-        vTaskDelay(pdMS_TO_TICKS(500));
+        gpio_set_level(TRIG_PIN, HIGH);
+        vTaskDelay(10 / portTICK_PERIOD_MS);
+        gpio_set_level(TRIG_PIN, LOW);
+
+        while(gpio_get_level(ECHO_PIN) == LOW)
+        {
+            // aguarda o echo começar
+        }
+
+        t1 = esp_timer_get_time();
+
+        while(gpio_get_level(ECHO_PIN) == HIGH)
+        {
+            // aguarda echo acabar
+        }
+
+        t2 = esp_timer_get_time();
+
+        pulse_time = t2 - t1;
+        distanciaAtual = (pulse_time/2) * 0.0344;
+
+        if (distanciaAtual >= 400 || distanciaAtual <= 5)
+        {
+            printf("Out of range");
+        }
+
+        vTaskDelay(1000/ portTICK_PERIOD_MS);
     }
 }
 
 void app_main(void)
 {
     // Pinos
-    gpio_num_t Echo = GPIO_NUM_22;
-    gpio_num_t Trigger = GPIO_NUM_23;
-
-    /* Set the GPIO as a input */
-    gpio_install_isr_service(1);
-
-    gpio_set_direction(Echo, GPIO_MODE_INPUT);
-    gpio_set_direction(Trigger, GPIO_MODE_OUTPUT);
-
-    /* Set the GPIO pull */
-    gpio_set_pull_mode(Echo, GPIO_PULLUP_ONLY);
+    gpio_reset_pin(TRIG_PIN); // trig
+    gpio_reset_pin(ECHO_PIN); // echo
+    gpio_set_direction(TRIG_PIN, GPIO_MODE_OUTPUT);
+    gpio_set_direction(ECHO_PIN, GPIO_MODE_INPUT);
 
     // Chamada das threads
     // Tarefa para o menu rodando no Core 0
@@ -109,7 +128,7 @@ void app_main(void)
 
     // Tarefa para verificar a distância rodando no Core 1
     xTaskCreatePinnedToCore(
-        VerificaDistancia,   // Função da tarefa
+        CalcularDistancia,   // Função da tarefa
         "Distance Task",     // Nome da tarefa
         4096,                // Tamanho da pilha
         NULL,                // Parâmetro passado para a função
