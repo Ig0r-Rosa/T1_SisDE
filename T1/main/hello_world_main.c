@@ -27,8 +27,8 @@ void Menu()
     while(1)
     {
         printf( "    Menu    \n"
-                "Para realizar a calibragem você precisa instalar o"
-                "sensor na posição final dele. Após, entrar com a"
+                "Para realizar a calibragem você precisa instalar o "
+                "sensor na posição final dele. Após, entrar com a "
                 "opção 1 no menu.\n"
                 "[1] - Captura a altura para calibragem. \n"
                 "[2] - Mostra a altura capturada. \n"
@@ -58,14 +58,14 @@ void Menu()
 void Calibrar()
 {
     distanciaChao = distanciaAtual;
-    printf("\n A altura do chão é %.2f metros. \n\n", distanciaChao);
+    printf("\n A altura do chão é %.2f cm. \n\n", distanciaChao);
 }
 
 void MostrarAltura()
 {
     if(distanciaChao - distanciaAtual > 0.35f)
     {
-        printf("\n A altura detectada é %.2f metros. \n\n", distanciaChao - distanciaAtual);
+        printf("\n A altura detectada é %.2f cm. \n\n", distanciaChao - distanciaAtual);
     }
     vTaskDelay(50);
 }
