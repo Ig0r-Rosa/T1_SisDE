@@ -1,120 +1,66 @@
 #include <stdio.h>
+#include <inttypes.h>
 #include "sdkconfig.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+#include "esp_system.h"
+#include "esp_spi_flash.h"
+#include "driver/uart.h"
 #include "driver/gpio.h"
 #include "esp_timer.h"
 
-// Variaveis globais
-volatile int tempoTriggerMili = 10;
-volatile float distanciaChao = -1;
-volatile float distanciaAtual = -1;
-volatile int duracao = -1;
-volatile int escolha = -1;
+#define LOW 0
+#define HIGH 1
+#define TRIG_PIN 22
+#define ECHO_PIN 23
 
-void Calibrar();
-void MostrarAltura();
-float CalcularDistancia();
-
-void Menu()
+void weight(void *arg)
 {
-    while(1)
+    int64_t t1 = 0, t2 = 0, pulse_time = 0;
+    float distance;
+    while(1) 
     {
-        printf( "    Menu    \n"
-                "Para realizar a calibragem você precisa instalar o"
-                "sensor na posição final dele. Após, entrar com a"
-                "opção 1 no menu.\n"
-                "[1] - Captura a altura para calibragem. \n"
-                "[2] - Mostra a altura capturada. \n"
-                "[0] - Retorna para o o menu. \n"
-                "Escolha: ");
+        gpio_set_level(TRIG_PIN, HIGH);
+        vTaskDelay(10 / portTICK_PERIOD_MS);
+        gpio_set_level(TRIG_PIN, LOW);
 
-        scanf("%i", &escolha);
-
-        switch (escolha)
+        while(gpio_get_level(ECHO_PIN) == LOW)
         {
-        case 1:
-            Calibrar();
-            break;
-        
-        case 2:
-            MostrarAltura();
-            break;
-        
-        default:
-            break;
+            // aguarda o echo começar
         }
 
-        vTaskDelay(10);
-    }
-}
+        t1 = esp_timer_get_time();
 
-void Calibrar()
-{
-    distanciaChao = CalcularDistancia();
-    printf("\n A altura do chão é %.2f metros. \n\n", distanciaChao);
-}
+        while(gpio_get_level(ECHO_PIN) == HIGH)
+        {
+            // aguarda echo acabar
+        }
 
-void MostrarAltura()
-{
-    if(distanciaChao - distanciaAtual > 0.35f)
-    {
-        printf("\n A altura detectada é %.2f metros. \n\n", distanciaChao - distanciaAtual);
-    }
-    vTaskDelay(50);
-}
+        t2 = esp_timer_get_time();
 
-float CalcularDistancia()
-{
-    // Calcula a distancia do sensor HC04
-    return -1;
-}
+        pulse_time = t2 - t1;
+        distance = (pulse_time/2) * 0.0344;
 
-// Função que fica verificando continuamente a distância
-void VerificaDistancia(void *pvParameters)
-{
-    while(1)
-    {
-        distanciaAtual = CalcularDistancia();
-        vTaskDelay(pdMS_TO_TICKS(500));
+        if (distance >= 400 || distance <= 5)
+        {
+            printf("Out of range");
+        }
+        else
+        {
+            printf("Distância medida: %11f\n", distance);
+        }
+
+        vTaskDelay(1000/ portTICK_PERIOD_MS);
     }
 }
 
 void app_main(void)
 {
-    // Pinos
-    gpio_num_t Echo = GPIO_NUM_22;
-    gpio_num_t Trigger = GPIO_NUM_23;
+    gpio_reset_pin(TRIG_PIN); // trig
+    gpio_reset_pin(ECHO_PIN); // echo
+    gpio_set_direction(TRIG_PIN, GPIO_MODE_OUTPUT);
+    gpio_set_direction(ECHO_PIN, GPIO_MODE_INPUT);
 
-    /* Set the GPIO as a input */
-    gpio_install_isr_service(1);
+    xTaskCreate(weight, "altura", 2048, NULL, 1, NULL);
 
-    gpio_set_direction(Echo, GPIO_MODE_INPUT);
-    gpio_set_direction(Trigger, GPIO_MODE_OUTPUT);
-
-    /* Set the GPIO pull */
-    gpio_set_pull_mode(Echo, GPIO_PULLUP_ONLY);
-
-    // Chamada das threads
-    // Tarefa para o menu rodando no Core 0
-    xTaskCreatePinnedToCore(
-        Menu,               // Função da tarefa
-        "Menu Task",        // Nome da tarefa
-        4096,               // Tamanho da pilha
-        NULL,               // Parâmetro passado para a função
-        1,                  // Prioridade da tarefa
-        NULL,               // Handle da tarefa (não precisamos aqui)
-        0                   // Núcleo 0
-    );
-
-    // Tarefa para verificar a distância rodando no Core 1
-    xTaskCreatePinnedToCore(
-        VerificaDistancia,   // Função da tarefa
-        "Distance Task",     // Nome da tarefa
-        4096,                // Tamanho da pilha
-        NULL,                // Parâmetro passado para a função
-        1,                   // Prioridade da tarefa
-        NULL,                // Handle da tarefa (não precisamos aqui)
-        1                    // Núcleo 1
-    );
 }
