@@ -1,0 +1,505 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7176
+load:0x40078000,len:15564
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.3 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Oct 14 2024 20:45:00[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.1[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0b13ch ( 45372) map[0m
+[0;32mI (120) esp_image: segment 1: paddr=0001b164 vaddr=3ffb0000 size=02354h (  9044) load[0m
+[0;32mI (123) esp_image: segment 2: paddr=0001d4c0 vaddr=40080000 size=02b58h ( 11096) load[0m
+[0;32mI (130) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1d908h (121096) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003d930 vaddr=40082b58 size=0aee0h ( 44768) load[0m
+[0;32mI (200) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (200) boot: Disabling RNG early entropy source...[0m
+[0;32mI (212) cpu_start: Multicore app[0m
+[0;32mI (220) cpu_start: Pro cpu start user code[0m
+[0;32mI (220) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (221) app_init: Application information:[0m
+[0;32mI (223) app_init: Project name:     hello_world[0m
+[0;32mI (229) app_init: App version:      1[0m
+[0;32mI (233) app_init: Compile time:     Oct 14 2024 20:44:50[0m
+[0;32mI (239) app_init: ELF file SHA256:  274bf6c97...[0m
+[0;32mI (244) app_init: ESP-IDF:          v5.3[0m
+[0;32mI (249) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (254) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (259) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (264) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (271) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (277) heap_init: At 3FFB2C28 len 0002D3D8 (180 KiB): DRAM[0m
+[0;32mI (283) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (289) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 4008DA38 len 000125C8 (73 KiB): IRAM[0m
+[0;32mI (303) spi_flash: detected chip: generic[0m
+[0;32mI (307) spi_flash: flash io: dio[0m
+[0;33mW (310) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (324) main_task: Started on CPU0[0m
+[0;32mI (334) main_task: Calling app_main()[0m
+[0;32mI (334) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (334) gpio: GPIO[23]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+    Menu    
+Para realizar a calibragem você precisa instalar o sensor na posição final dele. Após, entrar com a opção 1 no menu.
+[1] - Captura a altura para calibragem.
+[2] - Mostra a altura capturada.
+[0] - Retorna para o menu.
+Escolha: [0;32mI (354) main_task: Returned from app_main()[0m
+[0;32mI (454) DistanceTask: Pulse Time: 371 us, Distância: 0.06 metros[0m
+[0;32mI (1554) DistanceTask: Pulse Time: 336 us, Distância: 0.06 metros[0m
+[0;32mI (2794) DistanceTask: Pulse Time: 139405 us, Distância: 23.91 metros[0m
+[0;32mI (2794) DistanceTask: Fora do alcance: 23.91 metros[0m
+[0;32mI (3894) DistanceTask: Pulse Time: 532 us, Distância: 0.09 metros[0m
+[0;32mI (4994) DistanceTask: Pulse Time: 478 us, Distância: 0.08 metros[0m
+[0;31mE (5334) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (5334) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (5334) task_wdt: Tasks currently running:[0m
+[0;31mE (5334) task_wdt: CPU 0: Menu Task[0m
+[0;31mE (5334) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (5334) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D987F:0x3FFB0F70 0x400D9C44:0x3FFB0F90 0x40082E75:0x3FFB0FC0 0x400D6904:0x3FFB5C30 0x400D6E3D:0x3FFB5C50 0x4000BDBB:0x3FFB5C70 0x40001125:0x3FFB5C90 0x400E6752:0x3FFB5CB0 0x400E4683:0x3FFB5CD0 0x400E6479:0x3FFB6050 0x400DAF2B:0x3FFB6080 0x400D7765:0x3FFB60D0 0x40086DB9:0x3FFB60F0
+
+[0;32mI (6234) DistanceTask: Pulse Time: 139404 us, Distância: 23.91 metros[0m
+[0;32mI (6234) DistanceTask: Fora do alcance: 23.91 metros[0m
+[0;32mI (7344) DistanceTask: Pulse Time: 11222 us, Distância: 1.92 metros[0m
+[0;32mI (8454) DistanceTask: Pulse Time: 11222 us, Distância: 1.92 metros[0m
+[0;32mI (9554) DistanceTask: Pulse Time: 6834 us, Distância: 1.17 metros[0m
+[0;31mE (10334) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (10334) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (10334) task_wdt: Tasks currently running:[0m
+[0;31mE (10334) task_wdt: CPU 0: Menu Task[0m
+[0;31mE (10334) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (10334) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D987F:0x3FFB0F70 0x400D9C44:0x3FFB0F90 0x40082E75:0x3FFB0FC0 0x400D6904:0x3FFB5C30 0x400D6E3D:0x3FFB5C50 0x4000BDBB:0x3FFB5C70 0x40001125:0x3FFB5C90 0x400E6752:0x3FFB5CB0 0x400E4683:0x3FFB5CD0 0x400E6479:0x3FFB6050 0x400DAF2B:0x3FFB6080 0x400D7765:0x3FFB60D0 0x40086DB9:0x3FFB60F0
+
+[0;32mI (10664) DistanceTask: Pulse Time: 11248 us, Distância: 1.93 metros[0m
+[0;32mI (11764) DistanceTask: Pulse Time: 6762 us, Distância: 1.16 metros[0m
+[0;32mI (12864) DistanceTask: Pulse Time: 3899 us, Distância: 0.67 metros[0m
+[0;32mI (13964) DistanceTask: Pulse Time: 3999 us, Distância: 0.69 metros[0m
+[0;32mI (15064) DistanceTask: Pulse Time: 6790 us, Distância: 1.16 metros[0m
+[0;31mE (15334) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (15334) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (15334) task_wdt: Tasks currently running:[0m
+[0;31mE (15334) task_wdt: CPU 0: Menu Task[0m
+[0;31mE (15334) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (15334) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D987F:0x3FFB0F70 0x400D9C44:0x3FFB0F90 0x40082E75:0x3FFB0FC0 0x400E647B:0x3FFB6050 0x400DAF2B:0x3FFB6080 0x400D7765:0x3FFB60D0 0x40086DB9:0x3FFB60F0
+
+[0;32mI (16164) DistanceTask: Pulse Time: 561 us, Distância: 0.10 metros[0m
+[0;32mI (17264) DistanceTask: Pulse Time: 4208 us, Distância: 0.72 metros[0m
+[0;32mI (18504) DistanceTask: Pulse Time: 139378 us, Distância: 23.90 metros[0m
+[0;32mI (18504) DistanceTask: Fora do alcance: 23.90 metros[0m
+[0;32mI (19744) DistanceTask: Pulse Time: 139391 us, Distância: 23.91 metros[0m
+[0;32mI (19744) DistanceTask: Fora do alcance: 23.91 metros[0m
+[0;31mE (20334) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (20334) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (20334) task_wdt: Tasks currently running:[0m
+[0;31mE (20334) task_wdt: CPU 0: Menu Task[0m
+[0;31mE (20334) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (20334) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D987F:0x3FFB0F70 0x400D9C44:0x3FFB0F90 0x40082E75:0x3FFB0FC0 0x4000BFED:0x3FFB5BC0 0x4008715B:0x3FFB5BD0 0x40086C18:0x3FFB5BF0 0x40086CBA:0x3FFB5C30 0x4008284D:0x3FFB5C50 0x40082955:0x3FFB5C80 0x400829CE:0x3FFB5CA0 0x400E4129:0x3FFB5CD0 0x400E6479:0x3FFB6050 0x400DAF2B:0x3FFB6080 0x400D7765:0x3FFB60D0 0x40086DB9:0x3FFB60F0
+
+[0;32mI (20854) DistanceTask: Pulse Time: 11204 us, Distância: 1.92 metros[0m
+[0;32mI (21954) DistanceTask: Pulse Time: 6651 us, Distância: 1.14 metros[0m
+[0;32mI (23054) DistanceTask: Pulse Time: 2515 us, Distância: 0.43 metros[0m
+[0;32mI (24154) DistanceTask: Pulse Time: 2237 us, Distância: 0.38 metros[0m
+[0;32mI (25264) DistanceTask: Pulse Time: 11149 us, Distância: 1.91 metros[0m
+[0;31mE (25334) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (25334) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (25334) task_wdt: Tasks currently running:[0m
+[0;31mE (25334) task_wdt: CPU 0: Menu Task[0m
+[0;31mE (25334) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (25334) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D987F:0x3FFB0F70 0x400D9C44:0x3FFB0F90 0x40082E75:0x3FFB0FC0 0x400842B1:0x3FFB6090 0x40088862:0x3FFB60B0 0x400D7796:0x3FFB60D0 0x40086DB9:0x3FFB60F0
+
+[0;32mI (26504) DistanceTask: Pulse Time: 139405 us, Distância: 23.91 metros[0m
+[0;32mI (26504) DistanceTask: Fora do alcance: 23.91 metros[0m
+[0;32mI (27744) DistanceTask: Pulse Time: 139377 us, Distância: 23.90 metros[0m
+[0;32mI (27744) DistanceTask: Fora do alcance: 23.90 metros[0m
+[0;32mI (28984) DistanceTask: Pulse Time: 139376 us, Distância: 23.90 metros[0m
+[0;32mI (28984) DistanceTask: Fora do alcance: 23.90 metros[0m
+[0;32mI (30084) DistanceTask: Pulse Time: 1174 us, Distância: 0.20 metros[0m
+[0;31mE (30334) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (30334) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (30334) task_wdt: Tasks currently running:[0m
+[0;31mE (30334) task_wdt: CPU 0: Menu Task[0m
+[0;31mE (30334) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (30334) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D987F:0x3FFB0F70 0x400D9C44:0x3FFB0F90 0x40082E75:0x3FFB0FC0 0x400868A1:0x3FFB5B00 0x40086992:0x3FFB5B40 0x400828C3:0x3FFB5B60 0x40082995:0x3FFB5B90 0x400D4EC9:0x3FFB5BB0 0x400D6E3D:0x3FFB5BD0 0x4000BDBB:0x3FFB5BF0 0x400017EA:0x3FFB5C10 0x400D6907:0x3FFB5C30 0x400D6E3D:0x3FFB5C50 0x4000BDBB:0x3FFB5C70 0x40001125:0x3FFB5C90 0x400E6752:0x3FFB5CB0 0x400E4683:0x3FFB5CD0 0x400E6479:0x3FFB6050 0x400DAF2B:0x3FFB6080 0x400D7765:0x3FFB60D0 0x40086DB9:0x3FFB60F0
+
+[0;32mI (31184) DistanceTask: Pulse Time: 1090 us, Distância: 0.19 metros[0m
+[0;32mI (32284) DistanceTask: Pulse Time: 1174 us, Distância: 0.20 metros[0m
+[0;32mI (33384) DistanceTask: Pulse Time: 2879 us, Distância: 0.49 metros[0m
+[0;32mI (34484) DistanceTask: Pulse Time: 2881 us, Distância: 0.49 metros[0m
+[0;31mE (35334) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (35334) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (35334) task_wdt: Tasks currently running:[0m
+[0;31mE (35334) task_wdt: CPU 0: Menu Task[0m
+[0;31mE (35334) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (35334) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D987F:0x3FFB0F70 0x400D9C44:0x3FFB0F90 0x40082E75:0x3FFB0FC0 0x400DAF2D:0x3FFB6080 0x400D7765:0x3FFB60D0 0x40086DB9:0x3FFB60F0
+
+[0;32mI (35584) DistanceTask: Pulse Time: 2822 us, Distância: 0.48 metros[0m
+[0;32mI (36684) DistanceTask: Pulse Time: 7016 us, Distância: 1.20 metros[0m
+[0;32mI (37784) DistanceTask: Pulse Time: 2851 us, Distância: 0.49 metros[0m
+[0;32mI (38884) DistanceTask: Pulse Time: 2853 us, Distância: 0.49 metros[0m
+[0;32mI (39984) DistanceTask: Pulse Time: 7111 us, Distância: 1.22 metros[0m
+[0;31mE (40334) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (40334) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (40334) task_wdt: Tasks currently running:[0m
+[0;31mE (40334) task_wdt: CPU 0: Menu Task[0m
+[0;31mE (40334) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (40334) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D987F:0x3FFB0F70 0x400D9C44:0x3FFB0F90 0x40082E75:0x3FFB0FC0 0x4000BFED:0x3FFB5AD0 0x4008715B:0x3FFB5AE0 0x40086C18:0x3FFB5B00 0x40086CBA:0x3FFB5B40 0x4008284D:0x3FFB5B60 0x40082955:0x3FFB5B90 0x400D4E58:0x3FFB5BB0 0x400D6E3D:0x3FFB5BD0 0x4000BDBB:0x3FFB5BF0 0x400017EA:0x3FFB5C10 0x400D6907:0x3FFB5C30 0x400D6E3D:0x3FFB5C50 0x4000BDBB:0x3FFB5C70 0x40001125:0x3FFB5C90 0x400E6752:0x3FFB5CB0 0x400E4683:0x3FFB5CD0 0x400E6479:0x3FFB6050 0x400DAF2B:0x3FFB6080 0x400D7765:0x3FFB60D0 0x40086DB9:0x3FFB60F0
+
+[0;32mI (41084) DistanceTask: Pulse Time: 7140 us, Distância: 1.22 metros[0m
+[0;32mI (42324) DistanceTask: Pulse Time: 139376 us, Distância: 23.90 metros[0m
+[0;32mI (42324) DistanceTask: Fora do alcance: 23.90 metros[0m
+[0;32mI (43564) DistanceTask: Pulse Time: 139363 us, Distância: 23.90 metros[0m
+[0;32mI (43564) DistanceTask: Fora do alcance: 23.90 metros[0m
+[0;32mI (44804) DistanceTask: Pulse Time: 139376 us, Distância: 23.90 metros[0m
+[0;32mI (44804) DistanceTask: Fora do alcance: 23.90 metros[0m
+[0;31mE (45334) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (45334) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (45334) task_wdt: Tasks currently running:[0m
+[0;31mE (45334) task_wdt: CPU 0: Menu Task[0m
+[0;31mE (45334) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (45334) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D987F:0x3FFB0F70 0x400D9C44:0x3FFB0F90 0x40082E75:0x3FFB0FC0 0x4000BFED:0x3FFB5AD0 0x4008715B:0x3FFB5AE0 0x4008689F:0x3FFB5B00 0x40086992:0x3FFB5B40 0x400828C3:0x3FFB5B60 0x40082995:0x3FFB5B90 0x400D4EC9:0x3FFB5BB0 0x400D6E3D:0x3FFB5BD0 0x4000BDBB:0x3FFB5BF0 0x400017EA:0x3FFB5C10 0x400D6907:0x3FFB5C30 0x400D6E3D:0x3FFB5C50 0x4000BDBB:0x3FFB5C70 0x40001125:0x3FFB5C90 0x400E6752:0x3FFB5CB0 0x400E4683:0x3FFB5CD0 0x400E6479:0x3FFB6050 0x400DAF2B:0x3FFB6080 0x400D7765:0x3FFB60D0 0x40086DB9:0x3FFB60F0
+
+[0;32mI (45914) DistanceTask: Pulse Time: 11179 us, Distância: 1.92 metros[0m
+[0;32mI (47014) DistanceTask: Pulse Time: 1691 us, Distância: 0.29 metros[0m
+[0;32mI (48254) DistanceTask: Pulse Time: 139380 us, Distância: 23.90 metros[0m
+[0;32mI (48254) DistanceTask: Fora do alcance: 23.90 metros[0m
+[0;32mI (49494) DistanceTask: Pulse Time: 139378 us, Distância: 23.90 metros[0m
+[0;32mI (49494) DistanceTask: Fora do alcance: 23.90 metros[0m
+[0;32mI (49694) MenuTask: A altura do chão é -1.00 metros.[0m
+
+A altura do chão é -1.00 metros.
+
+[0;31mE (50334) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (50334) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (50334) task_wdt: Tasks currently running:[0m
+[0;31mE (50334) task_wdt: CPU 0: Menu Task[0m
+[0;31mE (50334) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (50334) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D987F:0x3FFB0F70 0x400D9C44:0x3FFB0F90 0x40082E75:0x3FFB0FC0 0x400D6904:0x3FFB5C30 0x400D6E3D:0x3FFB5C50 0x4000BDBB:0x3FFB5C70 0x40001125:0x3FFB5C90 0x400E6752:0x3FFB5CB0 0x400E4683:0x3FFB5CD0 0x400E6479:0x3FFB6050 0x400DAF2B:0x3FFB6080 0x400D7765:0x3FFB60D0 0x40086DB9:0x3FFB60F0
+
+[0;32mI (50734) DistanceTask: Pulse Time: 139390 us, Distância: 23.91 metros[0m
+[0;32mI (50734) DistanceTask: Fora do alcance: 23.91 metros[0m
+[0;32mI (51974) DistanceTask: Pulse Time: 139405 us, Distância: 23.91 metros[0m
+[0;32mI (51974) DistanceTask: Fora do alcance: 23.91 metros[0m
+[0;32mI (53214) DistanceTask: Pulse Time: 139406 us, Distância: 23.91 metros[0m
+[0;32mI (53214) DistanceTask: Fora do alcance: 23.91 metros[0m
+[0;32mI (54454) DistanceTask: Pulse Time: 139406 us, Distância: 23.91 metros[0m
+[0;32mI (54454) DistanceTask: Fora do alcance: 23.91 metros[0m
+[0;31mE (55334) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (55334) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (55334) task_wdt: Tasks currently running:[0m
+[0;31mE (55334) task_wdt: CPU 0: Menu Task[0m
+[0;31mE (55334) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (55334) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D987F:0x3FFB0F70 0x400D9C44:0x3FFB0F90 0x40082E75:0x3FFB0FC0 0x4000BFED:0x3FFB5AD0 0x4008715B:0x3FFB5AE0 0x4008689F:0x3FFB5B00 0x40086992:0x3FFB5B40 0x400828C3:0x3FFB5B60 0x40082995:0x3FFB5B90 0x400D4EC9:0x3FFB5BB0 0x400D6E3D:0x3FFB5BD0 0x4000BDBB:0x3FFB5BF0 0x400017EA:0x3FFB5C10 0x400D6907:0x3FFB5C30 0x400D6E3D:0x3FFB5C50 0x4000BDBB:0x3FFB5C70 0x40001125:0x3FFB5C90 0x400E6752:0x3FFB5CB0 0x400E4683:0x3FFB5CD0 0x400E6479:0x3FFB6050 0x400DAF2B:0x3FFB6080 0x400D7765:0x3FFB60D0 0x40086DB9:0x3FFB60F0
+
+[0;32mI (55694) DistanceTask: Pulse Time: 139404 us, Distância: 23.91 metros[0m
+[0;32mI (55694) DistanceTask: Fora do alcance: 23.91 metros[0m
+[0;32mI (56934) DistanceTask: Pulse Time: 139391 us, Distância: 23.91 metros[0m
+[0;32mI (56934) DistanceTask: Fora do alcance: 23.91 metros[0m
+[0;32mI (58174) DistanceTask: Pulse Time: 139394 us, Distância: 23.91 metros[0m
+[0;32mI (58174) DistanceTask: Fora do alcance: 23.91 metros[0m
+[0;32mI (59414) DistanceTask: Pulse Time: 139387 us, Distância: 23.90 metros[0m
+[0;32mI (59414) DistanceTask: Fora do alcance: 23.90 metros[0m
+[0;31mE (60334) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (60334) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (60334) task_wdt: Tasks currently running:[0m
+[0;31mE (60334) task_wdt: CPU 0: Menu Task[0m
+[0;31mE (60334) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (60334) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D987F:0x3FFB0F70 0x400D9C44:0x3FFB0F90 0x40082E75:0x3FFB0FC0 0x400842B1:0x3FFB6090 0x40088862:0x3FFB60B0 0x400D7796:0x3FFB60D0 0x40086DB9:0x3FFB60F0
+
+[0;32mI (60654) DistanceTask: Pulse Time: 139391 us, Distância: 23.91 metros[0m
+[0;32mI (60654) DistanceTask: Fora do alcance: 23.91 metros[0m
+[0;32mI (61894) DistanceTask: Pulse Time: 139391 us, Distância: 23.91 metros[0m
+[0;32mI (61894) DistanceTask: Fora do alcance: 23.91 metros[0m
+[0;32mI (63134) DistanceTask: Pulse Time: 139378 us, Distância: 23.90 metros[0m
+[0;32mI (63134) DistanceTask: Fora do alcance: 23.90 metros[0m
+[0;32mI (64374) DistanceTask: Pulse Time: 139405 us, Distância: 23.91 metros[0m
+[0;32mI (64374) DistanceTask: Fora do alcance: 23.91 metros[0m
+[0;31mE (65334) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (65334) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (65334) task_wdt: Tasks currently running:[0m
+[0;31mE (65334) task_wdt: CPU 0: Menu Task[0m
+[0;31mE (65334) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (65334) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D987F:0x3FFB0F70 0x400D9C44:0x3FFB0F90 0x40082E75:0x3FFB0FC0 0x4000BFED:0x3FFB5AD0 0x4008715B:0x3FFB5AE0 0x4008689F:0x3FFB5B00 0x40086992:0x3FFB5B40 0x400828C3:0x3FFB5B60 0x40082995:0x3FFB5B90 0x400D4EC9:0x3FFB5BB0 0x400D6E3D:0x3FFB5BD0 0x4000BDBB:0x3FFB5BF0 0x400017EA:0x3FFB5C10 0x400D6907:0x3FFB5C30 0x400D6E3D:0x3FFB5C50 0x4000BDBB:0x3FFB5C70 0x40001125:0x3FFB5C90 0x400E6752:0x3FFB5CB0 0x400E4683:0x3FFB5CD0 0x400E6479:0x3FFB6050 0x400DAF2B:0x3FFB6080 0x400D7765:0x3FFB60D0 0x40086DB9:0x3FFB60F0
+
+[0;32mI (65504) DistanceTask: Pulse Time: 1428 us, Distância: 0.24 metros[0m
+[0;32mI (66604) DistanceTask: Pulse Time: 1359 us, Distância: 0.23 metros[0m
+[0;32mI (67704) DistanceTask: Pulse Time: 1287 us, Distância: 0.22 metros[0m
+[0;32mI (68804) DistanceTask: Pulse Time: 1190 us, Distância: 0.20 metros[0m
+[0;32mI (69904) DistanceTask: Pulse Time: 1400 us, Distância: 0.24 metros[0m
+[0;31mE (70334) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (70334) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (70334) task_wdt: Tasks currently running:[0m
+[0;31mE (70334) task_wdt: CPU 0: Menu Task[0m
+[0;31mE (70334) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (70334) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D987F:0x3FFB0F70 0x400D9C44:0x3FFB0F90 0x40082E75:0x3FFB0FC0 0x400D6904:0x3FFB5C30 0x400D6E3D:0x3FFB5C50 0x4000BDBB:0x3FFB5C70 0x40001125:0x3FFB5C90 0x400E6752:0x3FFB5CB0 0x400E4683:0x3FFB5CD0 0x400E6479:0x3FFB6050 0x400DAF2B:0x3FFB6080 0x400D7765:0x3FFB60D0 0x40086DB9:0x3FFB60F0
+
+[0;32mI (71144) DistanceTask: Pulse Time: 139404 us, Distância: 23.91 metros[0m
+[0;32mI (71144) DistanceTask: Fora do alcance: 23.91 metros[0m
+[0;32mI (72384) DistanceTask: Pulse Time: 139381 us, Distância: 23.90 metros[0m
+[0;32mI (72384) DistanceTask: Fora do alcance: 23.90 metros[0m
+[0;32mI (73624) DistanceTask: Pulse Time: 139391 us, Distância: 23.91 metros[0m
+[0;32mI (73624) DistanceTask: Fora do alcance: 23.91 metros[0m
+[0;32mI (74864) DistanceTask: Pulse Time: 139391 us, Distância: 23.91 metros[0m
+[0;32mI (74864) DistanceTask: Fora do alcance: 23.91 metros[0m
+[0;31mE (75334) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (75334) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (75334) task_wdt: Tasks currently running:[0m
+[0;31mE (75334) task_wdt: CPU 0: Menu Task[0m
+[0;31mE (75334) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (75334) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D987F:0x3FFB0F70 0x400D9C44:0x3FFB0F90 0x40082E75:0x3FFB0FC0 0x400842B1:0x3FFB6090 0x40088862:0x3FFB60B0 0x400D7796:0x3FFB60D0 0x40086DB9:0x3FFB60F0
+
+[0;32mI (75964) DistanceTask: Pulse Time: 1300 us, Distância: 0.22 metros[0m
+[0;32mI (77064) DistanceTask: Pulse Time: 646 us, Distância: 0.11 metros[0m
+[0;32mI (78164) DistanceTask: Pulse Time: 672 us, Distância: 0.12 metros[0m
+[0;32mI (79404) DistanceTask: Pulse Time: 139394 us, Distância: 23.91 metros[0m
+[0;32mI (79404) DistanceTask: Fora do alcance: 23.91 metros[0m
+[0;31mE (80334) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (80334) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (80334) task_wdt: Tasks currently running:[0m
+[0;31mE (80334) task_wdt: CPU 0: Menu Task[0m
+[0;31mE (80334) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (80334) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D987F:0x3FFB0F70 0x400D9C44:0x3FFB0F90 0x40082E75:0x3FFB0FC0 0x4000BFED:0x3FFB5BC0 0x4008715B:0x3FFB5BD0 0x40086C18:0x3FFB5BF0 0x40086CBA:0x3FFB5C30 0x4008284D:0x3FFB5C50 0x40082955:0x3FFB5C80 0x400829CE:0x3FFB5CA0 0x400E4129:0x3FFB5CD0 0x400E6479:0x3FFB6050 0x400DAF2B:0x3FFB6080 0x400D7765:0x3FFB60D0 0x40086DB9:0x3FFB60F0
+
+[0;32mI (80504) DistanceTask: Pulse Time: 673 us, Distância: 0.12 metros[0m
+[0;32mI (81604) DistanceTask: Pulse Time: 506 us, Distância: 0.09 metros[0m
+[0;32mI (82704) DistanceTask: Pulse Time: 577 us, Distância: 0.10 metros[0m
+[0;32mI (83804) DistanceTask: Pulse Time: 841 us, Distância: 0.14 metros[0m
+[0;32mI (84904) DistanceTask: Pulse Time: 646 us, Distância: 0.11 metros[0m
+[0;31mE (85334) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (85334) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (85334) task_wdt: Tasks currently running:[0m
+[0;31mE (85334) task_wdt: CPU 0: Menu Task[0m
+[0;31mE (85334) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (85334) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D987F:0x3FFB0F70 0x400D9C44:0x3FFB0F90 0x40082E75:0x3FFB0FC0 0x400868A1:0x3FFB5B00 0x40086992:0x3FFB5B40 0x400828C3:0x3FFB5B60 0x40082995:0x3FFB5B90 0x400D4EC9:0x3FFB5BB0 0x400D6E3D:0x3FFB5BD0 0x4000BDBB:0x3FFB5BF0 0x400017EA:0x3FFB5C10 0x400D6907:0x3FFB5C30 0x400D6E3D:0x3FFB5C50 0x4000BDBB:0x3FFB5C70 0x40001125:0x3FFB5C90 0x400E6752:0x3FFB5CB0 0x400E4683:0x3FFB5CD0 0x400E6479:0x3FFB6050 0x400DAF2B:0x3FFB6080 0x400D7765:0x3FFB60D0 0x40086DB9:0x3FFB60F0
+
+[0;32mI (86004) DistanceTask: Pulse Time: 1260 us, Distância: 0.22 metros[0m
+[0;32mI (87244) DistanceTask: Pulse Time: 139377 us, Distância: 23.90 metros[0m
+[0;32mI (87244) DistanceTask: Fora do alcance: 23.90 metros[0m
+[0;32mI (88484) DistanceTask: Pulse Time: 139392 us, Distância: 23.91 metros[0m
+[0;32mI (88484) DistanceTask: Fora do alcance: 23.91 metros[0m
+[0;32mI (89584) DistanceTask: Pulse Time: 2112 us, Distância: 0.36 metros[0m
+[0;31mE (90334) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (90334) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (90334) task_wdt: Tasks currently running:[0m
+[0;31mE (90334) task_wdt: CPU 0: Menu Task[0m
+[0;31mE (90334) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (90334) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D987F:0x3FFB0F70 0x400D9C44:0x3FFB0F90 0x40082E75:0x3FFB0FC0 0x400E647B:0x3FFB6050 0x400DAF2B:0x3FFB6080 0x400D7765:0x3FFB60D0 0x40086DB9:0x3FFB60F0
+
+[0;32mI (90684) DistanceTask: Pulse Time: 1944 us, Distância: 0.33 metros[0m
+[0;32mI (91784) DistanceTask: Pulse Time: 2335 us, Distância: 0.40 metros[0m
+[0;32mI (92884) DistanceTask: Pulse Time: 1887 us, Distância: 0.32 metros[0m
+[0;32mI (94124) DistanceTask: Pulse Time: 139377 us, Distância: 23.90 metros[0m
+[0;32mI (94124) DistanceTask: Fora do alcance: 23.90 metros[0m
+[0;32mI (95224) DistanceTask: Pulse Time: 1984 us, Distância: 0.34 metros[0m
+[0;31mE (95334) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (95334) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (95334) task_wdt: Tasks currently running:[0m
+[0;31mE (95334) task_wdt: CPU 0: Menu Task[0m
+[0;31mE (95334) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (95334) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D987F:0x3FFB0F70 0x400D9C44:0x3FFB0F90 0x40082E75:0x3FFB0FC0 0x4000BFED:0x3FFB5BC0 0x4008715B:0x3FFB5BD0 0x40086C18:0x3FFB5BF0 0x40086CBA:0x3FFB5C30 0x4008284D:0x3FFB5C50 0x40082955:0x3FFB5C80 0x400829CE:0x3FFB5CA0 0x400E4129:0x3FFB5CD0 0x400E6479:0x3FFB6050 0x400DAF2B:0x3FFB6080 0x400D7765:0x3FFB60D0 0x40086DB9:0x3FFB60F0
+
+[0;32mI (96324) DistanceTask: Pulse Time: 2040 us, Distância: 0.35 metros[0m
+[0;32mI (97424) DistanceTask: Pulse Time: 1931 us, Distância: 0.33 metros[0m
+[0;32mI (98664) DistanceTask: Pulse Time: 139402 us, Distância: 23.91 metros[0m
+[0;32mI (98664) DistanceTask: Fora do alcance: 23.91 metros[0m
+[0;32mI (99904) DistanceTask: Pulse Time: 139418 us, Distância: 23.91 metros[0m
+[0;32mI (99904) DistanceTask: Fora do alcance: 23.91 metros[0m
+[0;31mE (100334) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (100334) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (100334) task_wdt: Tasks currently running:[0m
+[0;31mE (100334) task_wdt: CPU 0: Menu Task[0m
+[0;31mE (100334) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (100334) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D987F:0x3FFB0F70 0x400D9C44:0x3FFB0F90 0x40082E75:0x3FFB0FC0 0x400868A1:0x3FFB5B00 0x40086992:0x3FFB5B40 0x400828C3:0x3FFB5B60 0x40082995:0x3FFB5B90 0x400D4EC9:0x3FFB5BB0 0x400D6E3D:0x3FFB5BD0 0x4000BDBB:0x3FFB5BF0 0x400017EA:0x3FFB5C10 0x400D6907:0x3FFB5C30 0x400D6E3D:0x3FFB5C50 0x4000BDBB:0x3FFB5C70 0x40001125:0x3FFB5C90 0x400E6752:0x3FFB5CB0 0x400E4683:0x3FFB5CD0 0x400E6479:0x3FFB6050 0x400DAF2B:0x3FFB6080 0x400D7765:0x3FFB60D0 0x40086DB9:0x3FFB60F0
+
+[0;32mI (101004) DistanceTask: Pulse Time: 2306 us, Distância: 0.40 metros[0m
+[0;32mI (102244) DistanceTask: Pulse Time: 139393 us, Distância: 23.91 metros[0m
+[0;32mI (102244) DistanceTask: Fora do alcance: 23.91 metros[0m
+[0;32mI (103484) DistanceTask: Pulse Time: 139377 us, Distância: 23.90 metros[0m
+[0;32mI (103484) DistanceTask: Fora do alcance: 23.90 metros[0m
+[0;32mI (104724) DistanceTask: Pulse Time: 139377 us, Distância: 23.90 metros[0m
+[0;32mI (104724) DistanceTask: Fora do alcance: 23.90 metros[0m
+[0;31mE (105334) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (105334) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (105334) task_wdt: Tasks currently running:[0m
+[0;31mE (105334) task_wdt: CPU 0: Menu Task[0m
+[0;31mE (105334) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (105334) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D987F:0x3FFB0F70 0x400D9C44:0x3FFB0F90 0x40082E75:0x3FFB0FC0 0x4000BFED:0x3FFB5BC0 0x4008715B:0x3FFB5BD0 0x40086C18:0x3FFB5BF0 0x40086CBA:0x3FFB5C30 0x4008284D:0x3FFB5C50 0x40082955:0x3FFB5C80 0x400829CE:0x3FFB5CA0 0x400E4129:0x3FFB5CD0 0x400E6479:0x3FFB6050 0x400DAF2B:0x3FFB6080 0x400D7765:0x3FFB60D0 0x40086DB9:0x3FFB60F0
+
+[0;32mI (105964) DistanceTask: Pulse Time: 139391 us, Distância: 23.91 metros[0m
+[0;32mI (105964) DistanceTask: Fora do alcance: 23.91 metros[0m
+[0;32mI (107204) DistanceTask: Pulse Time: 139377 us, Distância: 23.90 metros[0m
+[0;32mI (107204) DistanceTask: Fora do alcance: 23.90 metros[0m
+[0;32mI (108444) DistanceTask: Pulse Time: 139392 us, Distância: 23.91 metros[0m
+[0;32mI (108444) DistanceTask: Fora do alcance: 23.91 metros[0m
+[0;32mI (109684) DistanceTask: Pulse Time: 139404 us, Distância: 23.91 metros[0m
+[0;32mI (109684) DistanceTask: Fora do alcance: 23.91 metros[0m
+[0;31mE (110334) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (110334) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (110334) task_wdt: Tasks currently running:[0m
+[0;31mE (110334) task_wdt: CPU 0: Menu Task[0m
+[0;31mE (110334) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (110334) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D987F:0x3FFB0F70 0x400D9C44:0x3FFB0F90 0x40082E75:0x3FFB0FC0 0x4000BFED:0x3FFB5BC0 0x4008715B:0x3FFB5BD0 0x40086C18:0x3FFB5BF0 0x40086CBA:0x3FFB5C30 0x4008284D:0x3FFB5C50 0x40082955:0x3FFB5C80 0x400829CE:0x3FFB5CA0 0x400E4129:0x3FFB5CD0 0x400E6479:0x3FFB6050 0x400DAF2B:0x3FFB6080 0x400D7765:0x3FFB60D0 0x40086DB9:0x3FFB60F0
+
+[0;32mI (110784) DistanceTask: Pulse Time: 2487 us, Distância: 0.43 metros[0m
+[0;32mI (112024) DistanceTask: Pulse Time: 139414 us, Distância: 23.91 metros[0m
+[0;32mI (112024) DistanceTask: Fora do alcance: 23.91 metros[0m
+[0;32mI (113124) DistanceTask: Pulse Time: 2531 us, Distância: 0.43 metros[0m
+[0;32mI (114364) DistanceTask: Pulse Time: 139392 us, Distância: 23.91 metros[0m
+[0;32mI (114364) DistanceTask: Fora do alcance: 23.91 metros[0m
+[0;31mE (115334) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (115334) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (115334) task_wdt: Tasks currently running:[0m
+[0;31mE (115334) task_wdt: CPU 0: Menu Task[0m
+[0;31mE (115334) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (115334) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D987F:0x3FFB0F70 0x400D9C44:0x3FFB0F90 0x40082E75:0x3FFB0FC0 0x400D6904:0x3FFB5C30 0x400D6E3D:0x3FFB5C50 0x4000BDBB:0x3FFB5C70 0x40001125:0x3FFB5C90 0x400E6752:0x3FFB5CB0 0x400E4683:0x3FFB5CD0 0x400E6479:0x3FFB6050 0x400DAF2B:0x3FFB6080 0x400D7765:0x3FFB60D0 0x40086DB9:0x3FFB60F0
+
+[0;32mI (115634) DistanceTask: Pulse Time: 139390 us, Distância: 23.91 metros[0m
+[0;32mI (115634) DistanceTask: Fora do alcance: 23.91 metros[0m
+[0;32mI (116874) DistanceTask: Pulse Time: 139364 us, Distância: 23.90 metros[0m
+[0;32mI (116874) DistanceTask: Fora do alcance: 23.90 metros[0m
+[0;32mI (117974) DistanceTask: Pulse Time: 2266 us, Distância: 0.39 metros[0m
+[0;32mI (119214) DistanceTask: Pulse Time: 139460 us, Distância: 23.92 metros[0m
+[0;32mI (119214) DistanceTask: Fora do alcance: 23.92 metros[0m
+[0;31mE (120334) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (120334) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (120334) task_wdt: Tasks currently running:[0m
+[0;31mE (120334) task_wdt: CPU 0: Menu Task[0m
+[0;31mE (120334) task_wdt: CPU 1: Distance Task[0m
+[0;31mE (120334) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D987F:0x3FFB0F70 0x400D9C44:0x3FFB0F90 0x40082E75:0x3FFB0FC0 0x4000BFED:0x3FFB5BC0 0x4008715B:0x3FFB5BD0 0x4008689F:0x3FFB5BF0 0x40086992:0x3FFB5C30 0x400828C3:0x3FFB5C50 0x40082995:0x3FFB5C80 0x400829E2:0x3FFB5CA0 0x400E63A1:0x3FFB5CD0 0x400E6479:0x3FFB6050 0x400DAF2B:0x3FFB6080 0x400D7765:0x3FFB60D0 0x40086DB9:0x3FFB60F0
+
+[0;32mI (120454) DistanceTask: Pulse Time: 139461 us, Distância: 23.92 metros[0m
+[0;32mI (120454) DistanceTask: Fora do alcance: 23.92 metros[0m
+[0;32mI (121554) DistanceTask: Pulse Time: 2446 us, Distância: 0.42 metros[0m
+[0;32mI (122654) DistanceTask: Pulse Time: 2335 us, Distância: 0.40 metros[0m
+[0;32mI (123754) DistanceTask: Pulse Time: 2490 us, Distância: 0.43 metros[0m
+[0;32mI (124854) DistanceTask: Pulse Time: 2515 us, Distância: 0.43 metros[0m
+[0;31mE (125334) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (125334) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (125334) task_wdt: Tasks currently running:[0m
+[0;31mE (125334) task_wdt: CPU 0: Menu Task[0m
+[0;31mE (125334) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (125334) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D987F:0x3FFB0F70 0x400D9C44:0x3FFB0F90 0x40082E75:0x3FFB0FC0 0x4000BFED:0x3FFB5AD0 0x4008715B:0x3FFB5AE0 0x4008689F:0x3FFB5B00 0x40086992:0x3FFB5B40 0x400828C3:0x3FFB5B60 0x40082995:0x3FFB5B90 0x400D4EC9:0x3FFB5BB0 0x400D6E3D:0x3FFB5BD0 0x4000BDBB:0x3FFB5BF0 0x400017EA:0x3FFB5C10 0x400D6907:0x3FFB5C30 0x400D6E3D:0x3FFB5C50 0x4000BDBB:0x3FFB5C70 0x40001125:0x3FFB5C90 0x400E6752:0x3FFB5CB0 0x400E4683:0x3FFB5CD0 0x400E6479:0x3FFB6050 0x400DAF2B:0x3FFB6080 0x400D7765:0x3FFB60D0 0x40086DB9:0x3FFB60F0
+
+[0;32mI (125954) DistanceTask: Pulse Time: 2348 us, Distância: 0.40 metros[0m
+[0;32mI (127054) DistanceTask: Pulse Time: 2503 us, Distância: 0.43 metros[0m
+[0;32mI (128154) DistanceTask: Pulse Time: 2389 us, Distância: 0.41 metros[0m
+[0;32mI (129254) DistanceTask: Pulse Time: 2292 us, Distância: 0.39 metros[0m
+[0;31mE (130334) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (130334) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (130334) task_wdt: Tasks currently running:[0m
+[0;31mE (130334) task_wdt: CPU 0: Menu Task[0m
+[0;31mE (130334) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (130334) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D987F:0x3FFB0F70 0x400D9C44:0x3FFB0F90 0x40082E75:0x3FFB0FC0 0x4000BFED:0x3FFB5AD0 0x4008715B:0x3FFB5AE0 0x40086C18:0x3FFB5B00 0x40086CBA:0x3FFB5B40 0x4008284D:0x3FFB5B60 0x40082955:0x3FFB5B90 0x400D4E58:0x3FFB5BB0 0x400D6E3D:0x3FFB5BD0 0x4000BDBB:0x3FFB5BF0 0x400017EA:0x3FFB5C10 0x400D6907:0x3FFB5C30 0x400D6E3D:0x3FFB5C50 0x4000BDBB:0x3FFB5C70 0x40001125:0x3FFB5C90 0x400E6752:0x3FFB5CB0 0x400E4683:0x3FFB5CD0 0x400E6479:0x3FFB6050 0x400DAF2B:0x3FFB6080 0x400D7765:0x3FFB60D0 0x40086DB9:0x3FFB60F0
+
+[0;32mI (130404) DistanceTask: Pulse Time: 2432 us, Distância: 0.42 metros[0m
+[0;32mI (131504) DistanceTask: Pulse Time: 2320 us, Distância: 0.40 metros[0m
+[0;32mI (132604) DistanceTask: Pulse Time: 2361 us, Distância: 0.40 metros[0m
+[0;32mI (133704) DistanceTask: Pulse Time: 2334 us, Distância: 0.40 metros[0m
+[0;32mI (134804) DistanceTask: Pulse Time: 2378 us, Distância: 0.41 metros[0m
+[0;31mE (135334) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (135334) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (135334) task_wdt: Tasks currently running:[0m
+[0;31mE (135334) task_wdt: CPU 0: Menu Task[0m
+[0;31mE (135334) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (135334) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D987F:0x3FFB0F70 0x400D9C44:0x3FFB0F90 0x40082E75:0x3FFB0FC0 0x400868A1:0x3FFB5B00 0x40086992:0x3FFB5B40 0x400828C3:0x3FFB5B60 0x40082995:0x3FFB5B90 0x400D4EC9:0x3FFB5BB0 0x400D6E3D:0x3FFB5BD0 0x4000BDBB:0x3FFB5BF0 0x400017EA:0x3FFB5C10 0x400D6907:0x3FFB5C30 0x400D6E3D:0x3FFB5C50 0x4000BDBB:0x3FFB5C70 0x40001125:0x3FFB5C90 0x400E6752:0x3FFB5CB0 0x400E4683:0x3FFB5CD0 0x400E6479:0x3FFB6050 0x400DAF2B:0x3FFB6080 0x400D7765:0x3FFB60D0 0x40086DB9:0x3FFB60F0
+
+[0;32mI (136044) DistanceTask: Pulse Time: 139392 us, Distância: 23.91 metros[0m
+[0;32mI (136044) DistanceTask: Fora do alcance: 23.91 metros[0m
+[0;32mI (137144) DistanceTask: Pulse Time: 2128 us, Distância: 0.36 metros[0m

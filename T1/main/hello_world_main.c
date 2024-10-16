@@ -8,6 +8,7 @@
 #include "esp_timer.h"
 #include "esp_log.h"                // Para esp_log_level_set e ESP_LOG_INFO
 
+
 // Definições
 #define TRIG_PIN GPIO_NUM_22
 #define ECHO_PIN GPIO_NUM_23
@@ -52,11 +53,11 @@ void exibirMenu()
 // Tarefa do Menu
 void MenuTask(void *pvParameters)
 {
+
     exibirMenu();
 
     while(1)
     {
-
         escolha = -1;
 
         scanf("%i", &escolha);
@@ -79,8 +80,6 @@ void MenuTask(void *pvParameters)
             default:
                 break;
         }
-
-        vTaskDelay(pdMS_TO_TICKS(1)); // Aguarda 1 segundo antes de exibir o menu novamente
     }
 }
 
@@ -155,7 +154,6 @@ void exibirAltura()
         float altura = localDistChao - localDistAtual;
         if(altura > 0.35f)
         {
-            ESP_LOGI(TAG_ALTURA, "A altura detectada é %.2f metros.", altura);
             printf("\nA altura detectada é %.2f metros.\n\n", altura);
         }
 
@@ -181,7 +179,6 @@ void CalcularDistancia(void *pvParameters)
         while(gpio_get_level(ECHO_PIN) == LOW) 
         {
             // Aguarda o echo começar
-            vTaskDelay(pdMS_TO_TICKS(1));
         }
 
         int64_t t1 = esp_timer_get_time();
@@ -190,7 +187,6 @@ void CalcularDistancia(void *pvParameters)
         while(gpio_get_level(ECHO_PIN) == HIGH) 
         {
             // Aguarda o echo acabar
-            vTaskDelay(pdMS_TO_TICKS(1));
         }
 
         int64_t t2 = esp_timer_get_time();
@@ -204,14 +200,10 @@ void CalcularDistancia(void *pvParameters)
         // Convertendo para metros:
         distancia = (pulse_time / 2.0f) * 0.0343f / 100.0f; // Distância em metros
 
-        // Log dos valores para depuração
-        ESP_LOGI(TAG_DIST, "Pulse Time: %lld us, Distância: %.2f metros", pulse_time, distancia);
-
         // Valida a distância
         if (distancia >= 4.0f || distancia <= 0.05f)
         {
             // Fora do alcance
-            ESP_LOGI(TAG_DIST, "Fora do alcance: %.2f metros", distancia);
             distancia = -1.0f; // Valor inválido
         }
 
@@ -224,7 +216,6 @@ void CalcularDistancia(void *pvParameters)
         else 
         {
             // Handle error
-            ESP_LOGE(TAG_DIST, "Erro ao adquirir o mutex.");
             printf("Erro ao adquirir o mutex.\n");
         }
 

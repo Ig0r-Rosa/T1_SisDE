@@ -1,0 +1,115 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7176
+load:0x40078000,len:15564
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.3 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Oct 16 2024 17:17:14[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.1[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0aa1ch ( 43548) map[0m
+[0;32mI (119) esp_image: segment 1: paddr=0001aa44 vaddr=3ffb0000 size=02338h (  9016) load[0m
+[0;32mI (123) esp_image: segment 2: paddr=0001cd84 vaddr=40080000 size=03294h ( 12948) load[0m
+[0;32mI (130) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ce64h (118372) map[0m
+[0;32mI (174) esp_image: segment 4: paddr=0003ce8c vaddr=40083294 size=0a668h ( 42600) load[0m
+[0;32mI (198) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (198) boot: Disabling RNG early entropy source...[0m
+[0;32mI (209) cpu_start: Multicore app[0m
+[0;32mI (218) cpu_start: Pro cpu start user code[0m
+[0;32mI (218) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (218) app_init: Application information:[0m
+[0;32mI (221) app_init: Project name:     hello_world[0m
+[0;32mI (226) app_init: App version:      1e0892b-dirty[0m
+[0;32mI (232) app_init: Compile time:     Oct 16 2024 17:17:13[0m
+[0;32mI (238) app_init: ELF file SHA256:  16bc70b38...[0m
+[0;32mI (243) app_init: ESP-IDF:          v5.3[0m
+[0;32mI (247) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (252) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (257) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (262) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (269) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (275) heap_init: At 3FFB2BF0 len 0002D410 (181 KiB): DRAM[0m
+[0;32mI (282) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (288) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (294) heap_init: At 4008D8FC len 00012704 (73 KiB): IRAM[0m
+[0;32mI (302) spi_flash: detected chip: generic[0m
+[0;32mI (305) spi_flash: flash io: dio[0m
+[0;33mW (309) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (323) main_task: Started on CPU0[0m
+[0;32mI (333) main_task: Calling app_main()[0m
+[0;32mI (333) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (333) gpio: GPIO[23]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+    Menu    
+Para realizar a calibragem você precisa instalar o sensor na posição final dele. Após, entrar com a opção 1 no menu.
+[1] - Captura a altura para calibragem.
+[2] - Mostra a altura capturada.
+[0] - Retorna para o menu.
+Escolha: [0;32mI (353) main_task: Returned from app_main()[0m
+[0;32mI (1603) MenuTask: A altura do chão é 0.51 metros.[0m
+
+A altura do chão é 0.51 metros.
+
+    Menu    
+Para realizar a calibragem você precisa instalar o sensor na posição final dele. Após, entrar com a opção 1 no menu.
+[1] - Captura a altura para calibragem.
+[2] - Mostra a altura capturada.
+[0] - Retorna para o menu.
+Escolha:     Menu    
+Para realizar a calibragem você precisa instalar o sensor na posição final dele. Após, entrar com a opção 1 no menu.
+[1] - Captura a altura para calibragem.
+[2] - Mostra a altura capturada.
+[0] - Retorna para o menu.
+Escolha: [0;32mI (4493) MenuTask: A altura do chão é 0.51 metros.[0m
+
+A altura do chão é 0.51 metros.
+
+    Menu    
+Para realizar a calibragem você precisa instalar o sensor na posição final dele. Após, entrar com a opção 1 no menu.
+[1] - Captura a altura para calibragem.
+[2] - Mostra a altura capturada.
+[0] - Retorna para o menu.
+Escolha: [0;32mI (13873) MenuTask: A altura do chão é 0.50 metros.[0m
+
+A altura do chão é 0.50 metros.
+
+[0;32mI (16843) MenuTask: A altura do chão é 0.50 metros.[0m
+
+A altura do chão é 0.50 metros.
+
+    Menu    
+Para realizar a calibragem você precisa instalar o sensor na posição final dele. Após, entrar com a opção 1 no menu.
+[1] - Captura a altura para calibragem.
+[2] - Mostra a altura capturada.
+[0] - Retorna para o menu.
+Escolha:     Menu    
+Para realizar a calibragem você precisa instalar o sensor na posição final dele. Após, entrar com a opção 1 no menu.
+[1] - Captura a altura para calibragem.
+[2] - Mostra a altura capturada.
+[0] - Retorna para o menu.
+Escolha:     Menu    
+Para realizar a calibragem você precisa instalar o sensor na posição final dele. Após, entrar com a opção 1 no menu.
+[1] - Captura a altura para calibragem.
+[2] - Mostra a altura capturada.
+[0] - Retorna para o menu.
+Escolha:     Menu    
+Para realizar a calibragem você precisa instalar o sensor na posição final dele. Após, entrar com a opção 1 no menu.
+[1] - Captura a altura para calibragem.
+[2] - Mostra a altura capturada.
+[0] - Retorna para o menu.
