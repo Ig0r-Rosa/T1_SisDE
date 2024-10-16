@@ -1033,3 +1033,13 @@
 8423	9091	1729103121483904378	hello_world.elf	a62be396af4cc76
 9091	9292	1729103121687908759	.bin_timestamp	86ea9aa04839fb36
 9293	9347	0	esp-idf/esptool_py/CMakeFiles/app_check_size	2462d7ed53f16e9d
+19	149	1728949499098661227	bootloader-prefix/src/bootloader-stamp/bootloader-build	917ef78ebae161c3
+19	149	1728949499098661227	bootloader/bootloader.elf	917ef78ebae161c3
+19	149	1728949499098661227	bootloader/bootloader.bin	917ef78ebae161c3
+19	149	1728949499098661227	bootloader/bootloader.map	917ef78ebae161c3
+20	196	1729103224690117703	esp-idf/main/CMakeFiles/__idf_main.dir/hello_world_main.c.obj	c0abcefc08e2551e
+196	218	1729103224714118217	esp-idf/main/libmain.a	a442ac16d3fefd35
+218	9146	1729103233574307946	esp-idf/esp_system/ld/sections.ld	1f1f0489a8e30e0b
+9147	9932	1729103234422326103	hello_world.elf	a62be396af4cc76
+9932	10176	1729103234670331413	.bin_timestamp	86ea9aa04839fb36
+10176	10265	0	esp-idf/esptool_py/CMakeFiles/app_check_size	2462d7ed53f16e9d
