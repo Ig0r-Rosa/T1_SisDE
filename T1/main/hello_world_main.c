@@ -90,10 +90,13 @@ void Calibrar()
     float localDistAtual;
 
     // Adquire o mutex antes de ler distanciaAtual
-    if(xSemaphoreTake(distanciaMutex, portMAX_DELAY) == pdTRUE) {
+    if(xSemaphoreTake(distanciaMutex, portMAX_DELAY) == pdTRUE) 
+    {
         localDistAtual = distanciaAtual;
         xSemaphoreGive(distanciaMutex); // Libera o mutex após a leitura
-    } else {
+    } 
+    else 
+    {
         // Handle error
         ESP_LOGE(TAG_MENU, "Erro ao adquirir o mutex.");
         printf("Erro ao adquirir o mutex.\n");
@@ -108,7 +111,8 @@ void Calibrar()
 // Função para Mostrar a Altura
 void MostrarAltura()
 {
-    if(exibindoAltura) {
+    if(exibindoAltura) 
+    {
         // Se já estiver exibindo, não faz nada
         return;
     }
@@ -134,12 +138,14 @@ void exibirAltura()
         float localDistChao, localDistAtual;
 
         // Adquire o mutex para ler distanciaChao e distanciaAtual
-        if(xSemaphoreTake(distanciaMutex, portMAX_DELAY) == pdTRUE) {
+        if(xSemaphoreTake(distanciaMutex, portMAX_DELAY) == pdTRUE) 
+        {
             localDistChao = distanciaChao;
             localDistAtual = distanciaAtual;
             xSemaphoreGive(distanciaMutex); // Libera o mutex após a leitura
         } 
-        else {
+        else 
+        {
             // Handle error
             ESP_LOGE(TAG_ALTURA, "Erro ao adquirir o mutex.");
             printf("Erro ao adquirir o mutex.\n");
@@ -172,7 +178,8 @@ void CalcularDistancia(void *pvParameters)
         gpio_set_level(TRIG_PIN, LOW);
 
         // Aguarda o echo começar
-        while(gpio_get_level(ECHO_PIN) == LOW) {
+        while(gpio_get_level(ECHO_PIN) == LOW) 
+        {
             // Aguarda o echo começar
             vTaskDelay(pdMS_TO_TICKS(1));
         }
@@ -180,7 +187,8 @@ void CalcularDistancia(void *pvParameters)
         int64_t t1 = esp_timer_get_time();
 
         // Aguarda o echo acabar
-        while(gpio_get_level(ECHO_PIN) == HIGH) {
+        while(gpio_get_level(ECHO_PIN) == HIGH) 
+        {
             // Aguarda o echo acabar
             vTaskDelay(pdMS_TO_TICKS(1));
         }
@@ -208,10 +216,13 @@ void CalcularDistancia(void *pvParameters)
         }
 
         // Adquire o mutex antes de escrever em distanciaAtual
-        if(xSemaphoreTake(distanciaMutex, portMAX_DELAY) == pdTRUE) {
+        if(xSemaphoreTake(distanciaMutex, portMAX_DELAY) == pdTRUE) 
+        {
             distanciaAtual = distancia;
             xSemaphoreGive(distanciaMutex); // Libera o mutex após a escrita
-        } else {
+        } 
+        else 
+        {
             // Handle error
             ESP_LOGE(TAG_DIST, "Erro ao adquirir o mutex.");
             printf("Erro ao adquirir o mutex.\n");
