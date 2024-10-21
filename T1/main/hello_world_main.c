@@ -8,7 +8,6 @@
 #include "esp_timer.h"
 #include "esp_log.h"                // Para esp_log_level_set e ESP_LOG_INFO
 
-
 // Definições
 #define TRIG_PIN GPIO_NUM_22
 #define ECHO_PIN GPIO_NUM_23
@@ -219,7 +218,7 @@ void CalcularDistancia(void *pvParameters)
             printf("Erro ao adquirir o mutex.\n");
         }
 
-        vTaskDelay(pdMS_TO_TICKS(1000)); // Aguarda 1 segundo antes da próxima medição
+        vTaskDelay(pdMS_TO_TICKS(100)); // Aguarda 0.1 segundo antes da próxima medição
     }
 }
 
