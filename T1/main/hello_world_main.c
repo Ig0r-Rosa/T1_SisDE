@@ -152,7 +152,7 @@ void exibirAltura()
         }
 
         float altura = localDistChao - localDistAtual;
-        if(altura > 0.35f)
+        if(altura > 0.35f && altura < distanciaChao)
         {
             printf("\nA altura detectada é %.2f metros.\n\n", altura);
         }
@@ -219,7 +219,7 @@ void CalcularDistancia(void *pvParameters)
             printf("Erro ao adquirir o mutex.\n");
         }
 
-        vTaskDelay(pdMS_TO_TICKS(1000)); // Aguarda 1 segundo antes da próxima medição
+        vTaskDelay(pdMS_TO_TICKS(1)); // Aguarda 1 segundo antes da próxima medição
     }
 }
 
