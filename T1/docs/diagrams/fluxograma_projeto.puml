@@ -1,0 +1,56 @@
+@startuml
+title Fluxograma do Algoritmo de Medicao de Altura com HC-SR04 e FreeRTOS
+
+start
+
+:Inicializacao (app_main);
+:Instalacao do driver UART;
+:Configuracao de logs;
+:Criacao do mutex (distanciaMutex);
+:Configuracao dos pinos GPIO (TRIG_PIN e ECHO_PIN);
+:Set TRIG_PIN LOW;
+
+:Criacao das Tarefas;
+note right
+  MenuTask (Core 0)
+  CalcularDistancia (Core 1)
+end note
+
+fork
+    :MenuTask Inicia;
+    :Exibir Menu;
+    loop Esperando Entrada do Usuario
+        :Aguardar Entrada do Usuario;
+        if (Escolha == 1) then (Calibrar)
+            :Chamar Calibrar();
+            :Executar Calibrar();
+        elseif (Escolha == 2) then (Mostrar Altura)
+            :Chamar MostrarAltura();
+            :Executar Mostrar Altura();
+        elseif (Escolha == 0) then (Retornar ao Menu)
+            :Exibir Menu Novamente;
+        else
+            :Opcao Invalida;
+        endif
+    end loop
+fork again
+    :CalcularDistancia Inicia;
+    loop Medicao Continua
+        :Enviar Pulso Trigger ao Sensor;
+        :Aguardar Echo;
+        :Medir Tempo do Pulso;
+        :Calcular Distancia;
+        if (Distancia Valida) then (Sim)
+            :Adquirir Mutex;
+            :Atualizar distanciaAtual;
+            :Liberar Mutex;
+        else (Nao)
+            :Distancia Invalida (-1.0);
+        endif
+        :Aguardar 1 Segundo;
+    end loop
+end fork
+
+stop
+
+@enduml
